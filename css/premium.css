@@ -1,0 +1,134 @@
+/* Premium Modern Developer Portfolio CSS Overrides */
+
+:root {
+  --bg-color: #0a0a0a;
+  --bg-secondary: #111111;
+  --primary-gradient: linear-gradient(135deg, #ffbd39 0%, #F96D00 100%);
+  --secondary-gradient: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
+  --text-primary: #f8f9fa;
+  --text-secondary: #a0aec0;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Typography Enhancements */
+h1.big {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  opacity: 0.1; /* Makes the background text subtle */
+  font-size: clamp(4rem, 8vw, 8rem); /* Responsive sizing */
+  top: -20px !important; /* Adjust positioning */
+}
+
+/* Glassmorphism Components */
+.ftco-about .img-about, .resume-wrap, .blog-entry, .box {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-wrap:hover, .blog-entry:hover, .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Buttons */
+.btn.btn-primary {
+  background: var(--primary-gradient);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 189, 57, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 189, 57, 0.6);
+}
+
+.btn.btn-white.btn-outline-white {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-white.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Navbar */
+.ftco-navbar-light {
+  background: rgba(10, 10, 10, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.ftco-navbar-light .navbar-nav > .nav-item > .nav-link {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Progress Bars */
+.progress {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  height: 8px !important;
+}
+
+.progress-bar {
+  background: var(--primary-gradient) !important;
+  border-radius: 8px;
+}
+
+/* Text Overrides */
+p {
+  color: var(--text-secondary);
+}
+
+span.title-s, .about-info span, .skill-mf span {
+  color: var(--text-primary) !important;
+}
+
+/* Project Images Placeholder */
+.block-20 {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Clean up hero */
+.hero {
+  background-color: var(--bg-color);
+  position: relative;
+}
+
+.hero .overlay {
+  background: radial-gradient(circle at center, rgba(255, 189, 57, 0.15) 0%, rgba(10, 10, 10, 1) 70%);
+}
+
+#typing-animation {
+  color: #ffbd39;
+}

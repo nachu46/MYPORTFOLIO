@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Web Application Projects | NAZUK.DEV</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Geist:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary": "#243600",
+                    "on-primary": "#00363a",
+                    "on-tertiary": "#1000a9",
+                    "surface-dim": "#0b1326",
+                    "surface-tint": "#00dbe9",
+                    "surface-container-high": "#222a3d",
+                    "inverse-primary": "#006970",
+                    "on-background": "#dae2fd",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#364e00",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#587d00",
+                    "background": "#0b1326",
+                    "on-secondary-fixed": "#131f00",
+                    "outline-variant": "#3b494b",
+                    "surface-bright": "#31394d",
+                    "on-primary-fixed-variant": "#004f54",
+                    "inverse-surface": "#dae2fd",
+                    "tertiary-fixed": "#e1e0ff",
+                    "tertiary-container": "#d7d6ff",
+                    "on-tertiary-fixed-variant": "#2f2ebe",
+                    "primary-fixed": "#7df4ff",
+                    "outline": "#849495",
+                    "secondary-fixed-dim": "#a9d55a",
+                    "surface-container-highest": "#2d3449",
+                    "on-tertiary-container": "#494bd7",
+                    "surface-variant": "#2d3449",
+                    "on-primary-container": "#006970",
+                    "surface": "#0b1326",
+                    "on-surface-variant": "#b9cacb",
+                    "inverse-on-surface": "#283044",
+                    "on-secondary-container": "#eeffcb",
+                    "secondary-fixed": "#c5f273",
+                    "surface-container": "#171f33",
+                    "primary": "#dbfcff",
+                    "primary-fixed-dim": "#00dbe9",
+                    "on-primary-fixed": "#002022",
+                    "primary-container": "#00f0ff",
+                    "secondary": "#a9d55a",
+                    "tertiary": "#f8f4ff",
+                    "error-container": "#93000a",
+                    "on-surface": "#dae2fd",
+                    "on-tertiary-fixed": "#07006c",
+                    "surface-container-low": "#131b2e",
+                    "surface-container-lowest": "#060e20",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#c0c1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "section-gap-lg": "120px",
+                    "gutter": "24px",
+                    "section-gap-md": "80px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "code-sm": ["JetBrains Mono"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["Geist"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Geist"],
+                    "headline-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "code-sm": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass {
+            background: rgba(11, 19, 38, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.05) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .grid-accent {
+            background-image: radial-gradient(#3b494b 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary/30">
+
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-outline-variant">
+<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
+<a href="/" class="flex items-center gap-3 cursor-pointer active:scale-95 transition-transform group">
+<span class="material-symbols-outlined text-primary group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">NAZUK.DEV</span>
+</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-mono text-label-mono text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="/#projects">PROJECTS</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="/#stack">STACK</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="/#experience">EXPERIENCE</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant font-medium hover:text-primary transition-colors duration-200" href="/#education">EDUCATION</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 border border-primary px-4 py-1" href="/#contact">CONTACT</a>
+</nav>
+<button class="md:hidden text-primary" onclick="toggleDrawer()">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+
+<!-- Navigation Drawer (Mobile) -->
+<div class="fixed inset-y-0 right-0 w-80 bg-surface-container-high dark:bg-surface-container-high border-l border-outline-variant shadow-2xl z-[60] translate-x-full transition-transform duration-300 ease-in-out" id="drawer">
+<div class="flex flex-col p-base gap-2">
+<div class="flex justify-between items-center p-gutter mb-4">
+<span class="font-label-mono text-label-mono text-primary">NAVIGATION</span>
+<button class="text-on-surface-variant" onclick="toggleDrawer()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<a class="flex items-center gap-4 p-gutter text-on-surface-variant hover:bg-surface-variant font-label-mono text-label-mono transition-all" href="/#projects">
+<span class="material-symbols-outlined" data-icon="code">code</span> PROJECTS
+</a>
+<a class="flex items-center gap-4 p-gutter text-on-surface-variant hover:bg-surface-variant font-label-mono text-label-mono transition-all" href="/#stack">
+<span class="material-symbols-outlined" data-icon="layers">layers</span> STACK
+</a>
+<a class="flex items-center gap-4 p-gutter text-on-surface-variant hover:bg-surface-variant font-label-mono text-label-mono transition-all" href="/#experience">
+<span class="material-symbols-outlined" data-icon="history">history</span> EXPERIENCE
+</a>
+<a class="flex items-center gap-4 p-gutter text-on-surface-variant hover:bg-surface-variant font-label-mono text-label-mono transition-all" href="/#education">
+<span class="material-symbols-outlined" data-icon="school">school</span> EDUCATION
+</a>
+<a class="flex items-center gap-4 p-gutter text-on-surface-variant hover:bg-surface-variant font-label-mono text-label-mono transition-all" href="/#contact">
+<span class="material-symbols-outlined" data-icon="mail">mail</span> CONTACT
+</a>
+</div>
+</div>
+
+<main class="pt-20">
+<!-- Hero -->
+<section class="pt-32 pb-24 px-gutter bg-surface-container-lowest border-b border-dashed border-outline-variant relative overflow-hidden">
+<!-- Dynamic Background -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-surface-container-lowest to-transparent pointer-events-none"></div>
+<div class="absolute top-1/4 left-10 w-96 h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="absolute bottom-10 right-10 w-80 h-80 bg-secondary/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+<div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Content Column -->
+    <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container/50 backdrop-blur-md border border-outline-variant mb-6 relative overflow-hidden group">
+            <div class="absolute inset-0 bg-primary/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(0,219,233,0.8)]"></span>
+            <span class="font-label-mono text-code-sm text-primary uppercase relative z-10">Enterprise Portal Development</span>
+        </div>
+        
+        <h1 class="font-display-lg text-display-lg text-on-surface mb-8 leading-[1.1]">
+            DATABRICKS <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">PORTAL</span>
+        </h1>
+        
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed mb-10">
+            A comprehensive web-based platform designed to streamline business operations, user management, and data handling workflows with secure authentication and scalable architecture.
+        </p>
+        
+        <div class="flex flex-wrap gap-4">
+            <div class="px-5 py-2 border border-outline-variant bg-surface-container-high/50 backdrop-blur-sm font-label-mono text-code-sm text-on-surface flex items-center gap-2 hover:border-primary transition-colors cursor-default">
+                <span class="material-symbols-outlined text-sm text-primary" data-icon="data_object">data_object</span> React.js & Node.js
+            </div>
+            <div class="px-5 py-2 border border-outline-variant bg-surface-container-high/50 backdrop-blur-sm font-label-mono text-code-sm text-on-surface flex items-center gap-2 hover:border-secondary transition-colors cursor-default">
+                <span class="material-symbols-outlined text-sm text-secondary" data-icon="api">api</span> REST Architecture
+            </div>
+            <a href="/#projects" class="px-5 py-2 border border-primary bg-primary/10 backdrop-blur-sm font-label-mono text-code-sm text-primary flex items-center gap-2 hover:bg-primary hover:text-on-primary transition-all">
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span> All Projects
+            </a>
+        </div>
+    </div>
+    
+    <!-- Abstract Visual Column -->
+    <div class="relative hidden lg:block h-[500px]">
+        <!-- Rotating Grid Rings -->
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-primary/20 rounded-full animate-[spin_20s_linear_infinite] border-dashed"></div>
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border border-secondary/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        
+        <!-- Floating Glass Cards -->
+        <div class="absolute top-1/4 left-10 glass border border-outline-variant p-6 max-w-[280px] transform -translate-y-4 shadow-2xl hover:border-primary transition-all duration-300 group">
+            <div class="w-12 h-12 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-primary text-2xl" data-icon="dashboard">dashboard</span>
+            </div>
+            <div class="font-label-mono text-on-surface mb-2 tracking-wide">Enterprise Portals</div>
+            <div class="text-code-sm text-on-surface-variant leading-relaxed">Scalable data architectures and advanced role-based access control.</div>
+        </div>
+        
+        <div class="absolute bottom-20 right-10 glass border border-outline-variant p-6 max-w-[280px] transform translate-y-4 shadow-2xl hover:border-secondary transition-all duration-300 group">
+            <div class="w-12 h-12 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined text-secondary text-2xl" data-icon="smart_toy">smart_toy</span>
+            </div>
+            <div class="font-label-mono text-on-surface mb-2 tracking-wide">AI Applications</div>
+            <div class="text-code-sm text-on-surface-variant leading-relaxed">Intelligent email automation and sophisticated workflow generation.</div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Projects -->
+<section class="py-section-gap-lg px-gutter bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto">
+
+    <!-- Databricks Governance RLAC Portal -->
+    <div class="mb-16 border border-outline-variant bg-surface-container hover:border-primary transition-colors duration-300 relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
+            <span class="material-symbols-outlined text-9xl">admin_panel_settings</span>
+        </div>
+        <div class="p-8 md:p-12 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-8 border-b border-outline-variant pb-8">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Databricks Governance & RLAC Portal</h2>
+                    <span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-widest block mb-4">Role: Full Stack Developer</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="font-label-mono text-label-mono text-secondary uppercase mb-4">Project Overview</h3>
+                    <p class="text-on-surface-variant leading-relaxed mb-6">A premium, state-of-the-art governance administrative console and security policy management portal integrated with the Databricks Unity Catalog. This platform automates direct table-level access permissions (Grants) and implements row-level security isolation (RLAC) based on dynamic user attributes (Group, Cluster, Company, and Plant codes).</p>
+                    
+                    <h3 class="font-label-mono text-label-mono text-secondary uppercase mb-4 mt-8">System Architecture</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="border border-outline-variant bg-surface p-6">
+                            <h4 class="font-headline-md text-headline-md text-primary mb-3 text-lg">Backend (Node.js/Express)</h4>
+                            <ul class="space-y-2 text-sm text-on-surface-variant">
+                                <li>• <strong class="text-on-surface">Role-Based Access Control:</strong> Strict middleware protection.</li>
+                                <li>• <strong class="text-on-surface">Policy Engine:</strong> Access operations and normalizations.</li>
+                                <li>• <strong class="text-on-surface">Databricks Driver:</strong> Direct Unity Catalog live access and policy enforcement.</li>
+                                <li>• <strong class="text-on-surface">Data Preview:</strong> Secure query simulation engine.</li>
+                            </ul>
+                        </div>
+                        <div class="border border-outline-variant bg-surface p-6">
+                            <h4 class="font-headline-md text-headline-md text-primary mb-3 text-lg">Frontend (React.js SPA)</h4>
+                            <ul class="space-y-2 text-sm text-on-surface-variant">
+                                <li>• <strong class="text-on-surface">Governance Console:</strong> Admin Assign Access for Grant & RLAC.</li>
+                                <li>• <strong class="text-on-surface">Compliance Audit:</strong> Interactive audit trail logs.</li>
+                                <li>• <strong class="text-on-surface">Employee Console:</strong> SQL Query & Access preview.</li>
+                                <li>• <strong class="text-on-surface">Security Modals:</strong> Reusable destructive confirmation flows.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-surface-container-high p-6 border border-outline-variant h-fit">
+                    <h3 class="font-label-mono text-label-mono text-primary uppercase mb-4">Technologies Used</h3>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">Databricks SQL</span>
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">Unity Catalog</span>
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">Node.js</span>
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">Express.js</span>
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">React.js</span>
+                        <span class="text-code-sm font-code-sm py-1 px-3 border border-outline-variant text-on-surface bg-background">Axios</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Flows Section -->
+            <div class="border-t border-outline-variant pt-12">
+                <h3 class="font-label-mono text-label-mono text-secondary uppercase mb-8">Critical Security Flows & Execution Logic</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Flow 1 -->
+                    <div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/50 mb-4">
+                            <span class="material-symbols-outlined text-primary text-sm" data-icon="shield">shield</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-on-surface mb-3 text-lg">1. Policy Save Flow</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Strict attribute normalization prevents security bypasses. Blank fields are normalized to NULL before executing a live <code>MERGE INTO workspace.governance.rlac_policies</code> query.</p>
+                        <div class="bg-background border border-outline-variant p-3 font-mono text-[10px] text-primary overflow-x-auto">
+                            MERGE INTO rlac_policies AS target<br>
+                            USING (...) AS source<br>
+                            ON target.user_email = source.email
+                        </div>
+                    </div>
+                    
+                    <!-- Flow 2 -->
+                    <div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/50 mb-4">
+                            <span class="material-symbols-outlined text-primary text-sm" data-icon="visibility">visibility</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-on-surface mb-3 text-lg">2. Preview Simulation</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">A Risk Assessment modal safely simulates a policy before production deployment. It extracts column metadata and formulates dynamic REGEXP filtering constraints to query live data temporarily.</p>
+                        <div class="bg-background border border-outline-variant p-3 font-mono text-[10px] text-secondary overflow-x-auto">
+                            TRIM(group_code) REGEXP '(?i)GRP005'
+                        </div>
+                    </div>
+
+                    <!-- Flow 3 -->
+                    <div class="p-6 bg-surface border border-outline-variant hover:border-primary transition-colors">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/50 mb-4">
+                            <span class="material-symbols-outlined text-primary text-sm" data-icon="lock">lock</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-on-surface mb-3 text-lg">3. Production Enforcement</h4>
+                        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">Adheres to least-privilege principles by revoking legacy access, dynamically building <code>rlac_filter_func</code>, and securely binding it via <code>ALTER TABLE ... SET ROW FILTER</code>.</p>
+                        <div class="bg-background border border-outline-variant p-3 font-mono text-[10px] text-primary overflow-x-auto">
+                            ALTER TABLE hr.employee<br>
+                            SET ROW FILTER rlac_filter_func
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="relative w-full bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-dashed border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-section-gap-md px-gutter max-w-container-max mx-auto gap-base">
+<div class="text-secondary dark:text-secondary font-code-sm text-code-sm">
+                © 2024 MUHAMMED NAZUK. ENGINEERED FOR PERFORMANCE.
+            </div>
+<div class="flex gap-8">
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-150" href="https://github.com/nachu46">GitHub</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-150" href="https://www.linkedin.com/in/muhammed-nazuk-a78414275">LinkedIn</a>
+<a class="font-label-mono text-label-mono uppercase tracking-widest text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 transition-all duration-150" href="https://instagram.com/nazuk.kasim">Instagram</a>
+</div>
+</div>
+</footer>
+
+<script>
+    const drawer = document.getElementById('drawer');
+    function toggleDrawer() {
+        drawer.classList.toggle('translate-x-full');
+    }
+
+    // Close drawer on link click
+    const drawerLinks = drawer.querySelectorAll('a');
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            drawer.classList.add('translate-x-full');
+        });
+    });
+</script>
+</body>
+</html>
