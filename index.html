@@ -887,8 +887,8 @@ document.addEventListener("DOMContentLoaded", function() {
         };
 
         try {
-            // Sends the request to the local Node.js server
-            const response = await fetch('http://localhost:5000/api/contact', {
+            // Sends the request to the Vercel serverless function
+            const response = await fetch('/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
